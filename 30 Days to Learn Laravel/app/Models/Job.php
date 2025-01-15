@@ -1,42 +1,15 @@
 <?php
 
+// App namespace defined in composer.json => autoload
 namespace App\Models;
 
-use Illuminate\Support\Arr;
+use Illuminate\Database\Eloquent\Model;
 
-class Job
+// Convention over Configuration: Model name singular, Table name plural
+// class JobListing extends Model
+class Job extends Model
 {
-    public static function all(): array
-    {
-        return [
-            [
-                'id' => 2,
-                'title' => 'Programmer',
-                'salary' => '$30,000',
-            ],
-            [
-                'id' => 3,
-                'title' => 'Teacher',
-                'salary' => '$40,000',
-            ],
-            [
-                'id' => 1,
-                'title' => 'Director',
-                'salary' => '$50,000',
-            ],
-        ];
-    }
-
-    public static function find(int $id): array {
-        // "this" würde auf eine Instanz der Klasse verweisen
-        // "static" verweist auf die eigene Klasse
-        $job = Arr::first(static::all(), fn($job) => $job['id'] == $id);
-
-        if (! $job) {
-            // Bubble up - benötigt keine Implementierung
-            abort(404);
-        }
-
-        return $job;
-    }
+    // $table = Konvention für Blueprint-Instanz
+    // definiert Namen der Datenbanktabelle, die mit Modell verknüpft wird
+    protected $table = 'job_listings';
 }

@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        About Page
+        Job Page
     </x-slot:heading>
 
     <h2 class="font-bold text-lg">

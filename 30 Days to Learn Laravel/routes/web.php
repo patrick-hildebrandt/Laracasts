@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// php artisan tinker
+// App\Models\Job::create([ 'title' => 'Acme Director', 'salary' => '$1,000,000' ]);
 use App\Models\Job;
+use Illuminate\Support\Facades\Route;
 
 // $jobs = [
 //     [
@@ -22,6 +24,11 @@ use App\Models\Job;
 // ];
 
 Route::get('/', function () {
+    // dump(Job::all());
+    // dump(Job::all()[0]);
+    // dump(Job::all()[0]->title);
+    // dump(Job::all()[0]->salary);
+
     return view('home');
 });
 
