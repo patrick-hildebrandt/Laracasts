@@ -1,7 +1,22 @@
 <?php
 
-// php artisan tinker
-// App\Models\Job::create([ 'title' => 'Acme Director', 'salary' => '$1,000,000' ]);
+// composer require beyondcode/laravel-er-diagram-generator
+// erfordert https://graphviz.gitlab.io/download/
+// Umgebungsvariablen => PATH => C:\Program Files\Graphviz\bin
+// php artisan vendor:publish --provider="BeyondCode\ErdGenerator\ErdGeneratorServiceProvider"
+// config/erd-generator.php:
+// 'rankdir' => 'LR', // Layoutrichtung: LR (Links nach Rechts) oder TB (Oben nach Unten)
+// 'size' => '20,20', // Größe des Diagramms
+// 'ratio' => 'compress', // Versucht, das Diagramm zu komprimieren
+// 'ratio' => 'auto', // Passt das Verhältnis automatisch an
+// 'ratio' => 'expand', // Erweitert das Diagramm, um den verfügbaren Platz zu füllen
+// 'ratio' => 'fill', // Füllt den verfügbaren Platz vollständig aus
+// 'ratio' => 'fit', // Passt das Diagramm an, um in den verfügbaren Platz zu passen
+// 'ratio' => 'none', // Keine Anpassung des Verhältnisses
+// 'dpi' => 300, // Auflösung
+
+// php artisan generate:erd
+
 use App\Models\Job;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +71,7 @@ Route::get('/job/{id}', function ($id) {
     // dd($job);
 
     return view('job', [
+        // 'job' wird zu $job in view
         'job' => $job,
     ]);
 });
