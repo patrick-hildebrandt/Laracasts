@@ -11,6 +11,15 @@
 // $job->salary;
 // $job->delete();
 
+// $job = App\Models\Job::first();
+// Lazy Loading: bezieht sich auf die Verzögerung einer SQL-Abfrage bis zum letztmöglichen Zeitpunkt
+// $job->employer;
+// $job->employer->name;
+// $employer = $job->employer;
+// $employer->jobs;
+// $employer->jobs[0];
+// $employer->jobs->first();
+
 // App namespace defined in composer.json => autoload
 namespace App\Models;
 
@@ -35,5 +44,12 @@ class Job extends Model
     public function employer()
     {
         return $this->belongsTo(Employer::class);
+    }
+
+    public function tags()
+    {
+        // CTRL + Click => belongsToMany($related, $table = null, $foreignPivotKey = null, $relatedPivotKey = null,
+        //                  $parentKey = null, $relatedKey = null, $relation = null)
+        return $this->belongsToMany(Tag::class, foreignPivotKey: 'job_listing_id');
     }
 }
