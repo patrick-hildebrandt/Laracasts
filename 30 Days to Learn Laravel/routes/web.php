@@ -4,16 +4,24 @@
 // erfordert https://graphviz.gitlab.io/download/
 // Umgebungsvariablen => PATH => C:\Program Files\Graphviz\bin
 // php artisan vendor:publish --provider="BeyondCode\ErdGenerator\ErdGeneratorServiceProvider"
+
 // config/erd-generator.php:
 // 'rankdir' => 'LR', // Layoutrichtung: LR (Links nach Rechts) oder TB (Oben nach Unten)
 // 'size' => '20,20', // Größe des Diagramms
+// 'dpi' => 300, // Auflösung
+
 // 'ratio' => 'compress', // Versucht, das Diagramm zu komprimieren
 // 'ratio' => 'auto', // Passt das Verhältnis automatisch an
 // 'ratio' => 'expand', // Erweitert das Diagramm, um den verfügbaren Platz zu füllen
 // 'ratio' => 'fill', // Füllt den verfügbaren Platz vollständig aus
 // 'ratio' => 'fit', // Passt das Diagramm an, um in den verfügbaren Platz zu passen
 // 'ratio' => 'none', // Keine Anpassung des Verhältnisses
-// 'dpi' => 300, // Auflösung
+
+// 'splines' => 'polyline', // ortho, polyline, curved, line
+// 'ignore' => [
+//    'App\Models\Model1',
+//    'App\Models\Model2',
+// ],
 
 // php artisan generate:erd
 
