@@ -1,11 +1,16 @@
 <?php
 
+// composer require barryvdh/laravel-debugbar --dev
+// .env => APP_DEBUG=true
+
+// ################################################
+
 // composer require beyondcode/laravel-er-diagram-generator
 // erfordert https://graphviz.gitlab.io/download/
 // Umgebungsvariablen => PATH => C:\Program Files\Graphviz\bin
 // php artisan vendor:publish --provider="BeyondCode\ErdGenerator\ErdGeneratorServiceProvider"
 
-// config/erd-generator.php:
+// config/erd-generator.php =>
 // 'rankdir' => 'LR', // Layoutrichtung: LR (Links nach Rechts) oder TB (Oben nach Unten)
 // 'size' => '20,20', // Größe des Diagramms
 // 'dpi' => 300, // Auflösung
@@ -19,8 +24,8 @@
 
 // 'splines' => 'polyline', // ortho, polyline, curved, line
 // 'ignore' => [
-//    'App\Models\Model1',
-//    'App\Models\Model2',
+// 'App\Models\Model1',
+// 'App\Models\Model2',
 // ],
 
 // php artisan generate:erd
@@ -56,10 +61,12 @@ Route::get('/', function () {
 });
 
 // Route::get('jobs', function () use ($jobs) {
-Route::get('jobs', function () {
+    Route::get('jobs', function () {
+    $jobs = Job::with('employer')->get();
+    
     return view('jobs', [
-        // 'jobs' => $jobs,
-        'jobs' => Job::all(),
+        // 'jobs' => Job::all(),
+        'jobs' => $jobs,
     ]);
 });
 
