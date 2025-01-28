@@ -1,6 +1,7 @@
 <?php
 
 // App namespace defined in composer.json => autoload
+
 namespace App\Models;
 
 use Illuminate\Support\Arr;

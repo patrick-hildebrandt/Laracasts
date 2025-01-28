@@ -19,6 +19,7 @@
         <div>
             {{-- http://127.0.0.1:8000/jobs?page=2 --}}
             {{-- php artisan vendor:publish --}}
+            {{-- => search for providers oder tags --}}
             {{ $jobs->links() }}
         </div>
     </div>

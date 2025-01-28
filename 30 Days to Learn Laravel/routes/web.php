@@ -61,10 +61,14 @@ Route::get('/', function () {
 });
 
 // Route::get('jobs', function () use ($jobs) {
-    Route::get('jobs', function () {
+Route::get('jobs', function () {
     // $jobs = Job::with('employer')->get();
-    $jobs = Job::with('employer')->paginate(3);
-    
+    // $jobs = Job::with('employer')->paginate(3);
+    // keine Seitenzahlen, URL nicht navigierbar
+    // $jobs = Job::with('employer')->cursorPaginate(3);
+    // keine Seitenzahlen
+    $jobs = Job::with('employer')->simplePaginate(3);
+
     return view('jobs', [
         // 'jobs' => Job::all(),
         'jobs' => $jobs,

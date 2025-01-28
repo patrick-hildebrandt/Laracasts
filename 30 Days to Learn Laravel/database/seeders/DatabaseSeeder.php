@@ -1,9 +1,14 @@
 <?php
 
+// php artisan db:seed - führt Datenbank-Seeder aus
+// php artisan help db:seed
+// --class[=CLASS]        The class name of the root seeder [default: "Database\Seeders\DatabaseSeeder"]
+// php artisan db:seed --class=JobSeeder - führt spezifischen Seeder aus
+
 namespace Database\Seeders;
 
+use App\Models\Job;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,11 +18,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
         User::factory()->create([
-            'name' => 'Test User',
+            'first_name' => 'John',
+            'last_name' => 'Doe',
             'email' => 'test@example.com',
         ]);
+
+        // Konsolen-Ausgabe
+        $this->command->info('JobSeeder gestartet');
+
+        // weitere Seeder hier integrieren, falls benötigt
+        $this->call(JobSeeder::class);
     }
 }

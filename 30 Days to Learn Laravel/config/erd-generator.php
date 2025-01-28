@@ -18,10 +18,6 @@ return [
      * and an array of relation names to ignore.
      */
     'ignore' => [
-        // User::class,
-        // Post::class => [
-        //     'user'
-        // ]
     ],
 
     /*
@@ -31,8 +27,6 @@ return [
      * Note: that if this array is filled, the 'ignore' array will not be used.
     */
     'whitelist' => [
-        // App\User::class,
-        // App\Post::class,
     ],
 
     /*
@@ -85,10 +79,10 @@ return [
         'splines' => 'polyline',
         'overlap' => false,
         'nodesep' => 1,
-        'rankdir' => 'LR', // Layoutrichtung: LR (Links nach Rechts) oder TB (Oben nach Unten)
-        'size' => '20,20', // Größe des Diagramms
-        'ratio' => 'compress', // Verhältnis
-        'dpi' => 300, // Auflösung
+        'rankdir' => 'LR',
+        'size' => '20,20',
+        'ratio' => 'compress',
+        'dpi' => 300,
         'pad' => 0.5,
         'ranksep' => 2,
         'esep' => true,

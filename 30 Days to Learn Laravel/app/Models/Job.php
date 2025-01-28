@@ -20,7 +20,7 @@
 // $employer->jobs[0];
 // $employer->jobs->first();
 
-// App namespace defined in composer.json => autoload
+// app namespace defined in composer.json => autoload
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
