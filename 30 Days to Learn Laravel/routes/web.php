@@ -61,23 +61,39 @@ Route::get('/', function () {
 });
 
 // Route::get('jobs', function () use ($jobs) {
-Route::get('jobs', function () {
+Route::get('/jobs', function () {
     // $jobs = Job::with('employer')->get();
     // $jobs = Job::with('employer')->paginate(3);
     // keine Seitenzahlen, URL nicht navigierbar
     // $jobs = Job::with('employer')->cursorPaginate(3);
     // keine Seitenzahlen
-    $jobs = Job::with('employer')->simplePaginate(3);
+    $jobs = Job::with('employer')->latest()->simplePaginate(3);
 
-    return view('jobs', [
+    return view('jobs.index', [
         // 'jobs' => Job::all(),
         'jobs' => $jobs,
     ]);
 });
 
+Route::post('/jobs', function () {
+    // dd(request()->all());
+    // dd(request('title'));
+    Job::create([
+        'title' => request()->title,
+        'salary' => request('salary'),
+        'employer_id' => 1,
+    ]);
+
+    return redirect('/jobs');
+});
+
+Route::get('/jobs/create', function () {
+    return view('jobs.create');
+});
+
 // {id} = wildcard
 // Route::get('/job/{id}', function ($id) use ($jobs) {
-Route::get('/job/{id}', function ($id) {
+Route::get('/jobs/{id}', function ($id) {
     // dump($id); // View muss funktional sein
     // dd($id);
 
@@ -90,11 +106,16 @@ Route::get('/job/{id}', function ($id) {
 
     // dd($job);
 
-    return view('job', [
+    return view('jobs.show', [
         // 'job' wird zu $job in view
         'job' => $job,
     ]);
 });
+
+// Exception wegen Wildcard oberhalb
+// Route::get('/job/create', function () {
+//     dd('hello there');
+// });
 
 Route::get('/contact', function () {
     return view('contact');

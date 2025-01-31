@@ -36,10 +36,13 @@ class Job extends Model
     // definiert Namen der Datenbanktabelle, die mit Modell verknüpft wird
     protected $table = 'job_listings';
 
-    protected $fillable = [
-        'title',
-        'salary',
-    ];
+    // protected $fillable = [
+    //     'title',
+    //     'salary',
+    //     'employer_id',
+    // ];
+
+    protected $guarded = [];
 
     public function employer()
     {
