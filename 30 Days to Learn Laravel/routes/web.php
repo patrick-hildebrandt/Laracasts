@@ -13,7 +13,7 @@
 // config/erd-generator.php =>
 // 'rankdir' => 'LR', // Layoutrichtung: LR (Links nach Rechts) oder TB (Oben nach Unten)
 // 'size' => '20,20', // Größe des Diagramms
-// 'dpi' => 300, // Auflösung
+// 'dpi' => 300, // Auflösung 
 
 // 'ratio' => 'compress', // Versucht, das Diagramm zu komprimieren
 // 'ratio' => 'auto', // Passt das Verhältnis automatisch an
@@ -61,6 +61,7 @@ Route::get('/', function () {
 });
 
 // Route::get('jobs', function () use ($jobs) {
+// Show Jobs
 Route::get('/jobs', function () {
     // $jobs = Job::with('employer')->get();
     // $jobs = Job::with('employer')->paginate(3);
@@ -75,9 +76,28 @@ Route::get('/jobs', function () {
     ]);
 });
 
+// Create Job
+Route::get('/jobs/create', function () {
+    return view('jobs.create');
+});
+
+// Store Job
 Route::post('/jobs', function () {
     // dd(request()->all());
     // dd(request('title'));
+    request()->validate(
+        [
+            'title' => [
+                'required',
+                'min:3',
+            ],
+            'salary' => [
+                'required',
+                'gte:20000'
+            ],
+        ]
+    );
+
     Job::create([
         'title' => request()->title,
         'salary' => request('salary'),
@@ -87,12 +107,9 @@ Route::post('/jobs', function () {
     return redirect('/jobs');
 });
 
-Route::get('/jobs/create', function () {
-    return view('jobs.create');
-});
-
 // {id} = wildcard
 // Route::get('/job/{id}', function ($id) use ($jobs) {
+// Show Job
 Route::get('/jobs/{id}', function ($id) {
     // dump($id); // View muss funktional sein
     // dd($id);
@@ -110,6 +127,50 @@ Route::get('/jobs/{id}', function ($id) {
         // 'job' wird zu $job in view
         'job' => $job,
     ]);
+});
+
+// Edit Job
+Route::get('/jobs/{id}/edit', function ($id) {
+    $job = Job::find($id);
+    
+    return view('jobs.edit', [
+        'job' => $job,
+    ]);
+});
+
+// Update Job
+Route::patch('/jobs/{id}', function ($id) {
+    request()->validate([
+        'title' => [
+            'required',
+            'min:3',
+        ],
+        'salary' => [
+            'required',
+            'gte:20000',
+        ],
+    ]);
+
+    // $job = Job::find($id);
+    $job = Job::findOrFail($id);
+    // $job->title = request('title');
+    // $job->salary = request('salary');
+    // $job->save();
+    $job->update([
+        'title' => request('title'),
+        'salary' => request('salary'),
+    ]);
+
+    return redirect('/jobs/' . $job->id);
+});
+
+// Destroy Job
+Route::delete('/jobs/{id}', function ($id) {
+    // Job::findOfFail($id)->delete();
+    $job = Job::findOrFail($id);
+    $job->delete();
+
+    return redirect('/jobs');
 });
 
 // Exception wegen Wildcard oberhalb
