@@ -3,6 +3,9 @@
 // php artisan make:controller => JobController => Empty Controller
 // php artisan route:list
 // php artisan route:list --except-vendor
+// cd ../
+// php artisan new StarterKit => Blade with Alpine => No => Pest => No
+
 
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
