@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        Edit Job: {{ $job->title }}
+        Create Job
     </x-slot:heading>
     <form method="POST" action="/jobs">
         {{-- Token-Erzeugung gegen Cross-Site-Request-Forgery-Angriffe, matcht mit Session --}}
