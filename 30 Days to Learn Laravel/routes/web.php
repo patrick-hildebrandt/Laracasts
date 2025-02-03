@@ -6,9 +6,10 @@
 // cd ../
 // php artisan new StarterKit => Blade with Alpine => No => Pest => No
 
-
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\SessionController;
 
 // * Common Routes
 Route::view('/', 'home');
@@ -26,6 +27,14 @@ Route::resource('jobs', JobController::class/*, [
         'edit',
     ],
 ]*/);
+
+// * RegisteredUserController
+Route::get('/register', [RegisteredUserController::class, 'create']);
+Route::post('/register', [RegisteredUserController::class, 'store']);
+
+// * Session Controller
+Route::get('/login', [SessionController::class, 'create']);
+Route::post('/login', [SessionController::class, 'store']);
 
 // * Return String
 Route::get('/string', function () {
