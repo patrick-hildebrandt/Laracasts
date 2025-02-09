@@ -10,10 +10,21 @@ use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Mail\JobPosted;
+use Illuminate\Support\Facades\Mail;
 
 // * Common Routes
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
+
+// Route::get('/test', function () {
+//     // return new JobPosted();
+//     Mail::to('patrick@koeper-it.de')
+//         ->send(
+//             new JobPosted()
+//         );
+//     return 'Done';
+// });
 
 // * JobController
 // Route::resource('jobs', JobController::class)->only('index', 'show')->middleware('auth');
