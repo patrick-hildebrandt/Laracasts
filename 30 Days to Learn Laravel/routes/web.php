@@ -35,6 +35,7 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 // * Session Controller
 Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
+Route::post('/logout', [SessionController::class, 'destroy']);
 
 // * Return String
 Route::get('/string', function () {

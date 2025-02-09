@@ -14,7 +14,7 @@
                         </x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input type="email" name="email" id="email" placeholder="john.doe@mail.com"
+                            <x-form-input type="email" name="email" id="email" :value="old('email')" placeholder="john.doe@mail.com"
                                 required />
 
                             <x-form-error name="email" />
@@ -27,7 +27,7 @@
                         </x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input type="password" name="password" id="password" placeholder="strong<PW>1234"
+                            <x-form-input type="password" name="password" id="password" :value="old('password')" placeholder="strong<PW>1234"
                                 required />
 
                             <x-form-error name="password" />
