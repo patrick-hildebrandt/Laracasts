@@ -7,7 +7,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Job;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 

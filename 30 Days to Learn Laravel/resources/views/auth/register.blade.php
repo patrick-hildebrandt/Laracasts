@@ -14,7 +14,7 @@
                         </x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input type="text" name="first_name" id="first_name" :value="old()" placeholder="John" required />
+                            <x-form-input type="text" name="first_name" id="first_name" :value="old('first_name')" placeholder="John" required />
 
                             <x-form-error name="first_name" />
                         </div>
@@ -26,7 +26,7 @@
                         </x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input type="text" name="last_name" id="last_name" :value="old()" placeholder="Doe" required />
+                            <x-form-input type="text" name="last_name" id="last_name" :value="old('last_name')" placeholder="Doe" required />
 
                             <x-form-error name="last_name" />
                         </div>
@@ -38,7 +38,7 @@
                         </x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input type="email" name="email" id="email" :value="old()" placeholder="john.doe@mail.com"
+                            <x-form-input type="email" name="email" id="email" :value="old('email')" placeholder="john.doe@mail.com"
                                 required />
 
                             <x-form-error name="email" />
@@ -51,7 +51,7 @@
                         </x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input type="password" name="password" id="password" :value="old()" placeholder="!strongPW1234"
+                            <x-form-input type="password" name="password" id="password" :value="old('password')" placeholder="!strongPW1234"
                                 required />
 
                             <x-form-error name="password" />
@@ -64,8 +64,8 @@
                         </x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input type="password" name="password_confirmation" :value="old()" id="password_confirmation"
-                                placeholder="!strongPW1234" required />
+                            <x-form-input type="password" name="password_confirmation" id="password_confirmation"
+                            :value="old('password_confirmation')" placeholder="!strongPW1234" required />
 
                             <x-form-error name="password_confirmation" />
                         </div>
