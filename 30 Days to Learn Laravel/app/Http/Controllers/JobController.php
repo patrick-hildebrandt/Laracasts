@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\JobPosted;
+use App\Models\Employer;
+use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
@@ -38,11 +40,13 @@ class JobController extends Controller
         $job = Job::create([
             'title' => request()->title,
             'salary' => request('salary'),
-            'employer_id' => 1,
+            // 'employer_id' => 1,
+            'employer_id' => Employer::where('user_id', Auth::user()->id)->first()->id,
         ]);
 
         Mail::to($job->employer->user)
             ->send(
+            // ->queue(
                 new JobPosted($job)
             );
 
