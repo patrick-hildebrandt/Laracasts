@@ -1,5 +1,7 @@
 <?php
 
+// php artisan queue:work
+
 namespace App\Http\Controllers;
 
 use App\Models\Job;
@@ -45,8 +47,8 @@ class JobController extends Controller
         ]);
 
         Mail::to($job->employer->user)
-            ->send(
-            // ->queue(
+            // ->send(
+            ->queue(
                 new JobPosted($job)
             );
 
