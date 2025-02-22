@@ -1,9 +1,6 @@
 {{-- cd path/to/repo => laravel new [project-name] --}}
 {{-- TablePlusConnection MS SQL = localhost : 1433 --}}
 
-{{-- notwendig für auto-refresh --}}
-@vite(['resources/css/app.css', 'resources/js/app.js'])
-{{-- dann npm install, php artisan serve, npm run dev --}}
 
 {{-- html:5 => Enter --}}
 <!DOCTYPE html>
@@ -14,7 +11,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <script src="https://cdn.tailwindcss.com/"></script>
+    {{-- <script src="https://cdn.tailwindcss.com/"></script> --}}
+    {{-- Asset-Bundling und Bereitstellung --}}
+    {{-- Hot Module Replacement (HMR) / Auto-Refresh --}}
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @vite(['resources/js/app.js'])
+    {{-- dann npm install, php artisan serve, npm run dev --}}
 </head>
 
 <body class="h-full">

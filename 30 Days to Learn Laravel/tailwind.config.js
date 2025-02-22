@@ -1,5 +1,8 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 
+// npm install -D tailwindcss postcss autoprefixer
+// npx tailwindcss init -p
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -12,6 +15,10 @@ export default {
     ],
     theme: {
         extend: {
+            colors: {
+                // "Laracasts": "rgb(50, 138, 241)",
+                "laracasts": "#ff2364",
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
