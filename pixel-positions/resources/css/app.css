@@ -1,0 +1,8 @@
+/* Fehler auf tailwindcss.com: npm install tailwindcss @tailwindcss/vite
+@import "tailwindcss";
+@source "../views";
+=> npm install -D tailwindcss & npm install -D postcss autoprefixer */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
