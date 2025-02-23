@@ -10,9 +10,16 @@ export default {
     ],
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            colors: {
+                black: '#060606',
             },
+            fontFamily: {
+                "hanken-grotesk": ['Hanken Grotesk', 'sans-serif'],
+            },
+            fontSize: {
+                // 10px / 16px = 0.625rem
+                '2xs': '0.625rem',
+            }
         },
     },
     plugins: [],
