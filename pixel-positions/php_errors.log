@@ -1,0 +1,9 @@
+[10-Mar-2025 22:07:11 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting ";" or "{" in C:\repos\Laracasts\pixel-positions\app\Models\User.php on line 51
+[10-Mar-2025 22:08:43 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting ";" in C:\repos\Laracasts\pixel-positions\app\Models\Job.php on line 16
+[10-Mar-2025 22:08:48 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting ";" in C:\repos\Laracasts\pixel-positions\app\Models\Job.php on line 16
+[10-Mar-2025 22:09:37 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting ";" in C:\repos\Laracasts\pixel-positions\app\Models\Employer.php on line 22
+[10-Mar-2025 22:09:47 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting ";" in C:\repos\Laracasts\pixel-positions\app\Models\Employer.php on line 22
+[10-Mar-2025 22:09:48 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting ";" in C:\repos\Laracasts\pixel-positions\app\Models\Employer.php on line 22
+[10-Mar-2025 22:09:56 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting ";" in C:\repos\Laracasts\pixel-positions\app\Models\Employer.php on line 22
+[10-Mar-2025 22:10:16 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting identifier or variable or "{" or "$" in C:\repos\Laracasts\pixel-positions\app\Models\Employer.php on line 22
+[10-Mar-2025 22:10:22 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting ";" in C:\repos\Laracasts\pixel-positions\app\Models\Employer.php on line 22
