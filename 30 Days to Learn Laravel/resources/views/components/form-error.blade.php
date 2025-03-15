@@ -7,8 +7,8 @@
         Log::error($name);
         Log::error($errors);
 
-        dump($name);
-        dump($errors);
+        // dump($name);
+        // dump($errors);
     }
 @endphp
 

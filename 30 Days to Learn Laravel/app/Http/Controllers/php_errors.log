@@ -1,0 +1,19 @@
+[15-Mar-2025 14:52:04 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in C:\repos\Laracasts\30 Days to Learn Laravel\app\Http\Controllers\SessionController.php:8
+Stack trace:
+#0 {main}
+  thrown in C:\repos\Laracasts\30 Days to Learn Laravel\app\Http\Controllers\SessionController.php on line 8
+[15-Mar-2025 15:03:45 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:0 (through xdebug.client_host/xdebug.client_port).
+[15-Mar-2025 15:03:45 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in C:\repos\Laracasts\30 Days to Learn Laravel\app\Http\Controllers\JobController.php:13
+Stack trace:
+#0 {main}
+  thrown in C:\repos\Laracasts\30 Days to Learn Laravel\app\Http\Controllers\JobController.php on line 13
+[15-Mar-2025 15:04:57 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:0 (through xdebug.client_host/xdebug.client_port).
+[15-Mar-2025 15:04:57 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in C:\repos\Laracasts\30 Days to Learn Laravel\app\Http\Controllers\JobController.php:13
+Stack trace:
+#0 {main}
+  thrown in C:\repos\Laracasts\30 Days to Learn Laravel\app\Http\Controllers\JobController.php on line 13
+[15-Mar-2025 15:05:25 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:0 (through xdebug.client_host/xdebug.client_port).
+[15-Mar-2025 15:05:25 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in C:\repos\Laracasts\30 Days to Learn Laravel\app\Http\Controllers\JobController.php:13
+Stack trace:
+#0 {main}
+  thrown in C:\repos\Laracasts\30 Days to Learn Laravel\app\Http\Controllers\JobController.php on line 13

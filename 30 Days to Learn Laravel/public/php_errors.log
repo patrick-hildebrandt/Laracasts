@@ -1,0 +1,1 @@
+[15-Mar-2025 14:36:31 UTC] PHP Warning:  Failed loading Zend extension 'xdebug' (tried: ext\xdebug (Das angegebene Modul wurde nicht gefunden), ext\php_xdebug.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
