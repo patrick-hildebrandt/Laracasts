@@ -8,7 +8,7 @@
 use App\Models\Employer;
 use App\Models\Job;
 
-it('blongs to an employer', function () {    
+it('belongs to an employer', function () {    
     // Arrange
     $employer = Employer::factory()->create();
     $job = Job::factory()->create([
@@ -17,4 +17,13 @@ it('blongs to an employer', function () {
     // Act & Assert
     // is = überprüft, ob aktuelle Instanz
     expect($job->employer->is($employer))->toBeTrue();
+});
+
+it('can have tags', function () {
+    // Arrange
+    $job = Job::factory()->create();
+    // Act
+    $job->tag('frontend');
+    // Assert
+    expect($job->tags)->toHaveCount(1);
 });
